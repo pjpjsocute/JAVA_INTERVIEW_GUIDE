@@ -1,4 +1,4 @@
-# **IX. Distributed Computing**
+# **Distributed Computing**
 
 > A distributed system is a system in which hardware or software components are distributed across different networked computers, communicating and coordinating with each other solely through message passing.
 

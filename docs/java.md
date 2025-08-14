@@ -1,5 +1,5 @@
-# Java
-## **Java Basics**
+
+## **Java Basic**
 
 ### Three object-oriented features
 

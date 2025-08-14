@@ -72,10 +72,8 @@ exclude:
 # --- 页面默认 Front Matter（减少每页重复写配置） ---
 defaults:
   - scope:
-      path: ""
+      path: ""      # 作用于 docs 下所有页面
       type: "pages"
     values:
-      layout: "default"
-      has_toc: true
-      toc_levels: "2,3,4"
-      nav_order: 9999
+      has_toc: true         # 开启右侧目录
+      toc_levels: "2,3,4"   # 目录展示的标题层级（## ### ####）
