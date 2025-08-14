@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: Java
 ---
 
@@ -7,7 +7,7 @@ title: Java
 
 #toc-sidebar {
   position: fixed;
-  top: 110px;         
+  top: 120px;     /* 视需要微调，避开顶部大图 */
   left: 24px;
   width: 260px;
   max-height: 75vh;
@@ -19,25 +19,23 @@ title: Java
   box-shadow: 0 2px 6px rgba(0,0,0,.06);
   z-index: 10;
 }
-
 #toc-sidebar ul { margin-left: 18px; }
 #toc-sidebar li { margin: 6px 0; }
 #toc-sidebar a { text-decoration: none; }
 
-.page-content { margin-left: 320px; }
-@media (max-width: 1024px){
 
-  #toc-sidebar { display:none; }
-  .page-content { margin-left: auto; }
+.main-content { margin-left: 320px; }
+
+@media (max-width: 1024px){
+  #toc-sidebar { display: none; }
+  .main-content { margin-left: auto; }
 }
 </style>
 
-<div id="toc-sidebar">
-<strong>On this page</strong>
+**On this page**
+
 * TOC
-{:toc}
-</div>
-<!-- ===== End Sidebar TOC ===== -->
+  {:toc #toc-sidebar}
 
 # Java
 ## **Java Basics**
