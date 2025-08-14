@@ -7,6 +7,9 @@ toc_levels: [2,3,4,5]
 
 ## Network Basics
 
+- TOC
+{:toc}
+
 ### **TCP Three-Way Handshake**
 
 **Three-way Handshake Process:**

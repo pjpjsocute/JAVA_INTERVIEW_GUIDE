@@ -8,6 +8,9 @@ toc_levels: [2,3,4,5]
 
 # Kafka
 
+- TOC
+{:toc}
+
 ### Why kafka
 
 The role of message queues: **asynchronous, peak shaving and valley filling, decoupling**

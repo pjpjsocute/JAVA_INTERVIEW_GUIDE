@@ -8,6 +8,9 @@ toc_levels: [2,3,4,5]
 
 # **Redis Chapter**
 
+- TOC
+{:toc}
+
 ### WhyRedis
 
 Fast, completely memory-based, implemented in C, uses epoll in the network layer to solve high concurrency issues, single-threaded model avoids unnecessary context switching and race conditions;

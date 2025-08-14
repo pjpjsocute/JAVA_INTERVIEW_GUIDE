@@ -8,6 +8,9 @@ toc_levels: [2,3,4,5]
 
 ## **Operating System Basics**
 
+- TOC
+{:toc}
+
 ### **Difference between processes and threads**
 
 **Process:** The smallest unit of resource allocation, a process can have multiple threads, multiple threads share the heap and method area resources of the process, but do not share the stack and program counter

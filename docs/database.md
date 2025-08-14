@@ -6,8 +6,11 @@ toc_levels: [2,3,4,5]
 ---
 
 # MySQL || PostgreSQL
+- TOC
+{:toc}
 
-##### to be updated
+
+**to be updated**
 ### Why Mysql || PostgreSQL？
 
 Four major families of NoSQL databases

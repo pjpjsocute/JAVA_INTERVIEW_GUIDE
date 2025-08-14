@@ -7,6 +7,9 @@ toc_levels: [2,3,4,5]
 
 # Spring 
 
+- TOC
+{:toc}
+
 ### Design Philosophy & Beans
 
 #### **1、IOC Inversion of Control**
