@@ -4,10 +4,9 @@ title: Java
 ---
 
 <style>
-
-#toc-sidebar {
+#markdown-toc{
   position: fixed;
-  top: 120px;     /* 视需要微调，避开顶部大图 */
+  top: 120px;
   left: 24px;
   width: 260px;
   max-height: 75vh;
@@ -19,23 +18,22 @@ title: Java
   box-shadow: 0 2px 6px rgba(0,0,0,.06);
   z-index: 10;
 }
-#toc-sidebar ul { margin-left: 18px; }
-#toc-sidebar li { margin: 6px 0; }
-#toc-sidebar a { text-decoration: none; }
+#markdown-toc ul{ margin-left: 18px; }
+#markdown-toc li{ margin: 6px 0; }
+#markdown-toc a{ text-decoration: none; }
 
+.main-content{ margin-left: 320px; }
 
-.main-content { margin-left: 320px; }
-
-@media (max-width: 1024px){
-  #toc-sidebar { display: none; }
-  .main-content { margin-left: auto; }
+@media (max-width:1024px){
+  #markdown-toc{ display:none; }
+  .main-content{ margin-left:auto; }
 }
 </style>
 
 **On this page**
 
-* TOC
-  {:toc #toc-sidebar}
+* TOC 
+{:toc}
 
 # Java
 ## **Java Basics**
