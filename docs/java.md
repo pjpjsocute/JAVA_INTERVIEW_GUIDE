@@ -6,7 +6,8 @@ layout: default
 
 - TOC
 {:toc}
-- 
+
+
 ## Java Basic
 
 ### Three object-oriented features
