@@ -1,11 +1,81 @@
+# --- 站点基础信息 ---
 title: Java Interview Notes
 description: Java · Spring/Spring Cloud · Databases · Computer Networks · OS · Redis · MQ · Distributed Systems
 
-theme: jekyll-theme-cayman
 
+url: "https://pjpjsocute.github.io"
+baseurl: "/JAVA_INTERVIEW_GUIDE"
+
+# --- 主题（带侧边栏） ---
+remote_theme: just-the-docs/just-the-docs
+
+# 可选：默认配色（light / dark）
+color_scheme: light
+
+# --- 插件（GitHub Pages 允许的白名单内） ---
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-include-cache
 
-
+# --- Markdown 渲染设置 ---
 markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+highlighter: rouge
+
+# --- just-the-docs 相关设置 ---
+# 启用站内搜索
+search_enabled: true
+search:
+  heading_level: 2
+  previews: 3
+  preview_words_before: 5
+  preview_words_after: 10
+
+
+aux_links:
+  "View on GitHub":
+    - "https://github.com/pjpjsocute/JAVA_INTERVIEW_GUIDE"
+
+
+nav_external_links:
+  - title: GitHub Repo
+    url: https://github.com/pjpjsocute/JAVA_INTERVIEW_GUIDE
+    hide_icon: false
+    opens_in_new_tab: true
+
+
+back_to_top: true
+back_to_top_text: "Back to top"
+
+# 页脚（可自定义一行文字）
+footer_content: "© 2025 Java Interview Notes"
+
+# 侧边栏排序：对大小写不敏感
+nav_sort: case_insensitive
+
+
+include:
+  - assets
+
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
+# --- 页面默认 Front Matter（减少每页重复写配置） ---
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+      has_toc: true
+      toc_levels: "2,3,4"
+      nav_order: 9999
