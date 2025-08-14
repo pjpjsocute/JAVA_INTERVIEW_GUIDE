@@ -854,13 +854,13 @@ To ensure only one page of data is returned each time, with constant performance
 Before sharding and partitioning, there was an SQL statement to query a user by username:
 
 ```python
-select * from user where name = "xxx" and community="other";
+select * from user where name = "xxx" and community="other";
 ```
 
 To achieve dynamic concatenation, a colleague modified this SQL statement as follows. His intention was that when name or community is passed as empty, the query conditions are dynamically removed. This style is very common in MyBatis configuration files. Most of the time, this style is fine because the result set can be controlled. However, as the system runs, the number of records in the user table increases. When both name and community passed are empty, a tragic thing happened:
 
 ```
-select * from user where 1=1
+select * from user where 1=1
 ```
 
 All records in the database will be queried and loaded into the JVM's memory. Since there are too many database records, the memory is directly overwhelmed. Memory overflow caused by this reason occurs very frequently, such as when importing Excel files.
@@ -878,9 +878,9 @@ Therefore, it is very necessary to keep the result set concise, which is also th
 The Service layer is used to handle specific business logic, more aligned with the functional requirements of the business. A Service may be used by multiple Controller layers, and it may also use query results from multiple DAO structures for calculation and assembly.
 
 ```java
-int getUserSize() {
-                List<User> users = dao.getAllUser();
-        return null == users ? 0 : users.size();
+int getUserSize() {
+                List<User> users = dao.getAllUser();
+        return null == users ? 0 : users.size();
 }
 ```
 

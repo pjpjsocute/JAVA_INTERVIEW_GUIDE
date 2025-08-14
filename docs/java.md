@@ -1236,36 +1236,36 @@ public class RunnableThread implements Runnable {
 **Implement the Callable interface** (supports return values and can throw exceptions)
 
 ```java
-class CallableTask implements Callable<Integer> {
-    @Override
-    public Integer call() throws Exception { return new Random().nextInt();}
+class CallableTask implements Callable<Integer> {
+    @Override
+    public Integer call() throws Exception { return new Random().nextInt();}
 }
 ```
 
 **Inherit from Thread class** (Java does not support multiple inheritance)
 
 ```java
-public class ExtendsThread extends Thread {
-    @Override
-    public void run() {System.out.println('Thread implements');}
+public class ExtendsThread extends Thread {
+    @Override
+    public void run() {System.out.println('Thread implements');}
 }
 ```
 
 **Use thread pool** (all implementations are based on implementing the run method)
 
 ```java
-static class DefaultThreadFactory implements ThreadFactory {
-    DefaultThreadFactory() {
-        SecurityManager s = System.getSecurityManager();
-        group = (s != null) ? s.getThreadGroup() : Thread.currentThread().getThreadGroup();
-        namePrefix = "pool-" + poolNumber.getAndIncrement() +"-thread-";
-    }
-    public Thread newThread(Runnable r) {
-        Thread t = new Thread(group, r,namePrefix + threadNumber.getAndIncrement(),0);
-        if (t.isDaemon()) t.setDaemon(false);  //if protect thread
-        if (t.getPriority() != Thread.NORM_PRIORITY) t.setPriority(Thread.NORM_PRIORITY); //thread priority
-        return t;
-    }
+static class DefaultThreadFactory implements ThreadFactory {
+    DefaultThreadFactory() {
+        SecurityManager s = System.getSecurityManager();
+        group = (s != null) ? s.getThreadGroup() : Thread.currentThread().getThreadGroup();
+        namePrefix = "pool-" + poolNumber.getAndIncrement() +"-thread-";
+    }
+    public Thread newThread(Runnable r) {
+        Thread t = new Thread(group, r,namePrefix + threadNumber.getAndIncrement(),0);
+        if (t.isDaemon()) t.setDaemon(false);  //if protect thread
+        if (t.getPriority() != Thread.NORM_PRIORITY) t.setPriority(Thread.NORM_PRIORITY); //thread priority
+        return t;
+    }
 }
 ```
 
