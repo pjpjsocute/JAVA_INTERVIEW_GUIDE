@@ -648,7 +648,7 @@ The old generation has a higher survival rate, and there is no additional space 
 
 **Safepoint** When GC occurs, all user threads must stop before garbage collection can proceed. This state can be considered safe for the JVM, and the entire heap state is stable. If a thread fails to reach a safepoint before GC, the entire JVM waits for this blocked thread, causing the overall GC time to increase.
 
-#### #MinorGC, MajorGC, FullGC
+#### MinorGC, MajorGC, FullGC
 
 **MinorGC** occurs when there is not enough space in the young generation.
 
