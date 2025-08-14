@@ -1,9 +1,14 @@
 ---
 layout: default
 title: Java Interview Notes
+has_toc: false           # 保险起见，也在页面里显式打开
+toc_levels: [2,3,4,5]
 ---
 
 # Java Interview Notes
+
+- TOC
+{:toc}
 
 > Practical, concise, and battle-tested prep notes for Java, Databases, and Computer Networks.
 
