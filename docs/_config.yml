@@ -1,64 +1,11 @@
-# ---- Site basics ----
 title: Java Interview Notes
 description: Java · Spring/Spring Cloud · Databases · Computer Networks · OS · Redis · MQ · Distributed Systems
-# 你的 GitHub Pages 主机名与仓库路径（有助于 SEO 与 sitemap）
-url: "https://pjpjsocute.github.io"
-baseurl: "/JAVA_INTERVIEW_GUIDE"
-repository: "pjpjsocute/JAVA_INTERVIEW_GUIDE"
 
-# ---- Theme ----
-remote_theme: pages-themes/cayman@v0.2.0
+theme: jekyll-theme-cayman
 
-# ---- Plugins (都在 GitHub Pages 白名单内) ----
 plugins:
-  - jekyll-remote-theme   # 远程主题
-  - jekyll-seo-tag        # SEO 元信息
-  - jekyll-sitemap        # 生成 sitemap.xml
-  # - jemoji              # 如需 GitHub 风格 emoji，取消注释
+  - jekyll-seo-tag
+  - jekyll-sitemap
 
-# ---- Markdown/TOC 设置 ----
+
 markdown: kramdown
-kramdown:
-  input: GFM
-  hard_wrap: false
-  syntax_highlighter_opts:
-    block:
-      line_numbers: false
-  toc_levels: 1..3   # 若使用 {:toc} 生成目录，控制标题层级
-
-# ---- 默认布局：让所有 pages 使用主题的 page 布局 ----
-defaults:
-  - scope:
-      path: ""        # 作用于 docs 下所有 md（Jekyll 构建时以 docs 为站点根）
-      type: "pages"
-    values:
-      layout: page
-      # permalink 可保持默认，或按需自定义
-      # permalink: /:name/
-
-# ---- 自定义导航数据（可选）----
-# Cayman 不会自动渲染导航；你可在 index.md 里用 Liquid 循环这份数据生成链接，
-# 或者保持你当前手写的目录。这里先把数据集中在 config 里，方便日后复用。
-topnav:
-  - title: Home
-    url: /              # 指向站点首页（docs/index.md 渲染后）
-  - title: Java
-    url: /java.html
-  - title: Spring
-    url: /spring.html
-  - title: Databases
-    url: /database.html
-  - title: Networks
-    url: /network.html
-  - title: OS
-    url: /os.html
-  - title: Redis
-    url: /redis.html
-  - title: MQ
-    url: /mq.html
-  - title: Distributed
-    url: /ds.html
-
-# ---- 版权/页脚（可根据需要展示在页面上）----
-author: "Zhou Lei"
-copyright: "© ${year} Zhou Lei. Content licensed under Apache-2.0."
