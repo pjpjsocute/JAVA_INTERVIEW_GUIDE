@@ -76,4 +76,4 @@ defaults:
       type: "pages"
     values:
       has_toc: true         # 开启右侧目录
-      toc_levels: "2,3,4"   # 目录展示的标题层级（## ### ####）
+      toc_levels: [2,3,4,5]  # 目录展示的标题层级（## ### ####）

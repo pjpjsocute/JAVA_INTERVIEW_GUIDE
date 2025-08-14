@@ -1,3 +1,7 @@
+---
+title: Java Basic
+layout: default
+---
 
 ## **Java Basic**
 
