@@ -1,3 +1,11 @@
+
+---
+title: Message Queue
+layout: default
+has_toc: true            # 保险起见，也在页面里显式打开
+toc_levels: [2,3,4,5]
+---
+
 # Kafka
 
 ### Why kafka

@@ -144,7 +144,7 @@ Reflection first enables obtaining the bytecode of reflection classes in Java, t
 
 * **Custom Annotations** - Annotations themselves merely serve a marking purpose; they need to utilize reflection mechanisms to invoke annotation interpreters based on annotations, executing behavior.
 
-#### 7、Java Exception Hierarchy**
+#### 7、Java Exception Hierarchy
 
 Throwable is the superclass of all errors and exceptions in the Java language. The next level is divided into Error and Exception.
 
