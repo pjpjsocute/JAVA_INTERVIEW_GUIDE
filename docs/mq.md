@@ -1,4 +1,3 @@
-
 ---
 title: Message Queue
 layout: default
