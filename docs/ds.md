@@ -182,7 +182,7 @@ Enhancing system robustness through methods such as rate limiting, degradation, 
 
 #### Log replication
 
-<img src="./pic/pc.png" alt="image-20210114154435003" style="zoom:50%;" />
+![img.png](../pic/pc.png)<
 
 1.  **Leader** adds the command to the log, initiates RPC to other servers to have them replicate this information
 2.  **Leader** will continuously retry until all Followers have responded with ACK and replicated all log entries
