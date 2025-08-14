@@ -592,7 +592,10 @@ ALTER TABLE user add index idx_gid_ctime_uid(gid,ctime,uid)
 ④ Pagination in Limit will slow down as the start value increases; use subqueries + table joins to solve
 
 ```sql
-select * from mytbl order by id limit 100000,10  改进后的SQL语句如下：
+select * from mytbl order by id limit 100000,10  
+```
+optimized sql should be like:
+```sql
 select * from mytbl where id >= ( select id from mytbl order by id limit 100000,1 ) limit 10
 select * from mytbl inner ori join (select id from mytbl order by id limit 100000,10) as tmp on tmp.id=ori.id;
 ```
