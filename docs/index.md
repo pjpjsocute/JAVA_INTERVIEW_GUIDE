@@ -1,3 +1,8 @@
+---
+layout: default
+title: Java Interview Notes
+---
+
 # Java Interview Notes
 
 > Practical, concise, and battle-tested prep notes for Java, Databases, and Computer Networks.
