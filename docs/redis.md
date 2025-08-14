@@ -6,10 +6,12 @@ toc_levels: [2,3,4,5]
 ---
 
 
-# **Redis Chapter**
+# Cache
 
 - TOC
 {:toc}
+
+## Redis
 
 ### WhyRedis
 

@@ -167,9 +167,9 @@ When Spring starts, it parses and converts all bean information (including XML a
 
 
 
-**The three-level cache solves the circular dependency problem**
+#### The three-level cache solves the circular dependency problem
 
-#### ![img](../pic/bean_cir.jpg)
+ ![img](../pic/bean_cir.jpg)
 
 1.  After ClassA is initialized by the constructor and exposed to the singletonFactorys (in the three-level cache) in advance in the Spring container, Spring initializes ClassA.
 

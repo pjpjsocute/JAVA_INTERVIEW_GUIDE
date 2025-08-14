@@ -5,10 +5,12 @@ has_toc: true            # 保险起见，也在页面里显式打开
 toc_levels: [2,3,4,5]
 ---
 
-- TOC
-{:toc}
+
 
 # **Distributed Computing**
+
+- TOC
+{:toc}
 
 > A distributed system is a system in which hardware or software components are distributed across different networked computers, communicating and coordinating with each other solely through message passing.
 

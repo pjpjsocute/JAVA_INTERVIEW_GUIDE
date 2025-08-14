@@ -5,12 +5,13 @@ has_toc: true            # 保险起见，也在页面里显式打开
 toc_levels: [2,3,4,5]
 ---
 
-# MySQL || PostgreSQL
+# DataBase
+**to be updated**
+
 - TOC
 {:toc}
+## Mysql and PostgreSQL
 
-
-**to be updated**
 ### Why Mysql || PostgreSQL？
 
 Four major families of NoSQL databases
