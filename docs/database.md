@@ -625,7 +625,7 @@ Configure connection number, disable Swap, increase memory, upgrade SSD hard dri
 
 #### 4、JOIN queries
 
-![](https://image-static.segmentfault.com/276/780/2767807589-5c122586a23c4_articlex)
+![](../pic/join.png)
 
 **left join (left outer join)** returns all records from the left table and the records from the right table where the associated fields are equal
 
