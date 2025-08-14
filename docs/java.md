@@ -1,3 +1,45 @@
+---
+layout: page
+title: Java
+---
+
+<style>
+
+#toc-sidebar {
+  position: fixed;
+  top: 110px;         
+  left: 24px;
+  width: 260px;
+  max-height: 75vh;
+  overflow: auto;
+  padding: 12px 14px;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,.06);
+  z-index: 10;
+}
+
+#toc-sidebar ul { margin-left: 18px; }
+#toc-sidebar li { margin: 6px 0; }
+#toc-sidebar a { text-decoration: none; }
+
+.page-content { margin-left: 320px; }
+@media (max-width: 1024px){
+
+  #toc-sidebar { display:none; }
+  .page-content { margin-left: auto; }
+}
+</style>
+
+<div id="toc-sidebar">
+<strong>On this page</strong>
+* TOC
+{:toc}
+</div>
+<!-- ===== End Sidebar TOC ===== -->
+
+# Java
 ## **Java Basics**
 
 ### Three object-oriented features
