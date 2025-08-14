@@ -2,8 +2,12 @@
 title: Java Basic
 layout: default
 ---
+# Java
 
-## **Java Basic**
+- TOC
+{:toc}
+- 
+## Java Basic
 
 ### Three object-oriented features
 
@@ -15,11 +19,11 @@ layout: default
 
 **Polymorphism:** Through inheritance (multiple subclasses overriding the same method), or also through interfaces (implementing an interface and overriding it)
 
-#### **1、Differences between Java and C++**
+####  1、Differences between Java and C++
 
 Differences: C++ supports multiple inheritance and has the concept of pointers, with memory managed by the programmer; Java is single inheritance and can use interfaces to implement multiple inheritance. Java does not provide pointers to directly access memory, making program memory safer, and Java has a JVM automatic memory management mechanism that does not require programmers to manually release unused memory.
 
-#### **2、Principles of Polymorphism Implementation**
+####  2、Principles of Polymorphism Implementation
 
 The underlying implementation of polymorphism is dynamic binding, which associates method calls with method implementations at runtime.
 
@@ -63,7 +67,7 @@ When a class is modified with final, it indicates that the class cannot be inher
 
 A class cannot be inherited, except for the final keyword and can have its constructor privatized (internal classes are invalid)
 
-#### 4、Abstract Classes and Interfaces
+####  4、Abstract Classes and Interfaces
 
 **Abstract Class:** A class that contains abstract methods, i.e., a class modified with the abstract keyword; abstract classes can only be inherited, so they cannot be modified with final, and abstract classes cannot be instantiated,
 
@@ -93,7 +97,7 @@ Wanting to constrain subclasses to have common behavior (but not caring about ho
 
 Constraining multiple implementing classes to have unified behavior, but not caring about how each implementing class specifically implements it; the various functionalities within the implementing classes may have no connection at all
 
-#### 5、Generics and Generic Erasure
+####  5、Generics and Generic Erasure
 
 **Generics:**
 
@@ -107,7 +111,7 @@ For types like List, they all become List after compilation. The JVM only sees L
 
 Other type elements can be added through reflection.
 
-#### **6、Reflection Principle and Usage Scenarios**
+#### 6、Reflection Principle and Usage Scenarios
 
 **Java Reflection:**
 
@@ -137,7 +141,7 @@ Reflection first enables obtaining the bytecode of reflection classes in Java, t
 
 * **Custom Annotations** - Annotations themselves merely serve a marking purpose; they need to utilize reflection mechanisms to invoke annotation interpreters based on annotations, executing behavior.
 
-#### **7、Java Exception Hierarchy**
+#### 7、Java Exception Hierarchy**
 
 Throwable is the superclass of all errors and exceptions in the Java language. The next level is divided into Error and Exception.
 
@@ -165,7 +169,7 @@ Such as IOException, SQLException, NotFoundException;
 
 ### Data Structures
 
-#### **1, ArrayList and LinkedList**
+#### 1, ArrayList and LinkedList
 
 **ArrayList:**
 
@@ -189,7 +193,7 @@ You can use the native Vector, or the Collections.synchronizedList(List list) fu
 
 
 
-#### **2、Fast and safe failure when traversing a List**
+#### 2、Fast and safe failure when traversing a List
 
 **① Normal for loop traversal of List to delete specified elements**
 
@@ -234,7 +238,7 @@ Disadvantages: The advantage of copying content is that it avoids ConcurrentModi
 
 Scenarios: Containers under the java.util.concurrent package are all fail-safe and can be used concurrently in multi-threaded environments, allowing concurrent modifications.
 
-#### **3、Detailed Introduction to HashMap**
+#### 3、Detailed Introduction to HashMap
 
 Perspective: Data structure + Expansion conditions + Detailed process of put lookup + Hash function + Why the capacity is always 2^N, differences between JDK 1.7 and 1.8.
 
@@ -286,7 +290,7 @@ The underlying implementation combines **arrays and linked lists** together, usi
 
 The underlying data structure employs **array + linked list + red-black tree**; when the linked list length exceeds the threshold (default is 8-Poisson distribution), and the array length exceeds 64, the linked list will be converted to a red-black tree to reduce search time. (Solves the notorious URL parameter DoS attack issue in Tomcat)
 
-#### **4、ConcurrentHashMap**
+#### 4、ConcurrentHashMap
 
 Thread safety can be achieved through **ConcurrentHashMap** and **Hashtable**; Hashtable is the original API class, synchronized with synchronize for synchronization, inefficient; ConcurrentHashMap implements segment locking, more efficient than Hashtable;
 
@@ -298,7 +302,7 @@ The **ConcurrentHashMap in JDK1.7** employs segmented array + linked list at the
 
 **ConcurrentHashMap in JDK1.8** adopts the same data structure as HashMap1.8, which is array + linked list / red-black tree; it discards the concept of Segment and directly uses a Node array + linked list + red-black tree data structure to implement, ensuring thread safety through concurrent control with **synchronized and CAS** to operate.
 
-#### **5\. Serialization and deserialization**
+#### 5\. Serialization and deserialization
 
 Serialization means converting the state of an object into a byte stream, which can later be used to recreate an object with the same state. Object serialization is one way to achieve object persistence; it involves converting the attributes and methods of an object into a serialized form for storage and transmission. Deserialization is the process of reconstructing an object based on this saved information.
 
@@ -316,7 +320,7 @@ b、Utilize serialization to implement remote communication, i.e., sending the b
 
 Serialization ID: serialVersionUID mismatch leads to deserialization failure
 
-#### **6、String**
+#### 6、String
 
 String uses a **array** to store content, the array is modified with **final**, therefore the value of a string defined by String is also **immutable**.
 
@@ -324,7 +328,7 @@ StringBuffer adds a synchronization lock to methods, making it thread-safe, but 
 
 ### Design Patterns and Principles
 
-#### 1\. Singleton Pattern
+####  1\. Singleton Pattern
 
 A class can only generate one instance, which is globally accessible, such as the singleton pool in the first-level cache of the Spring container.
 
@@ -348,7 +352,7 @@ Not suitable for stateful and changeable scenarios.
 
 **Enumeration**: Recommended in Effective Java, reflection cannot break it
 
-#### 2\. Factory Pattern
+####  2\. Factory Pattern
 
 Define an interface used to create products, with subclasses determining what kind of product to produce.
 
@@ -356,7 +360,7 @@ Define an interface used to create products, with subclasses determining what ki
 
 **Disadvantages:** Each new product requires a new product class
 
-#### 3、Abstract Factory Pattern
+####  3、Abstract Factory Pattern
 
 Provides an interface for creating a family of related or dependent objects, and enforces this through constraints.
 
@@ -384,7 +388,7 @@ The keyword `this` represents a reference to the current object. The current obj
 
 Keyword `this` cannot be used in static methods. Static methods do not depend on references to specific class objects.
 
-### **The difference between override and overload**
+### The difference between override and overload
 
 Overloading refers to defining multiple methods in the same class, where these methods have the same name but different signatures.
 
@@ -414,11 +418,11 @@ Overriding refers to methods in a subclass that have the same name and signature
 | Character               | \[0, 127\]      |
 | Boolean                 | \[false, true\] |
 
-# II. JVM
+## JVM
 
-### **JVM memory division**
+### JVM memory division
 
-#### **1、JVM Runtime Data Areas**
+#### 1、JVM Runtime Data Areas
 
 Heap, Method Area (Metaspace), Virtual Machine Stack, Native Method Stack, Program Counter
 
@@ -474,7 +478,7 @@ The local method stack is similar to the virtual machine stack, but the differen
 
 PC refers to a pointer that stores the location of the next instruction. It is a small memory space and is **thread-private**. Due to thread switching, the CPU needs to remember the location of the next instruction of the original thread during execution, so each thread needs its own PC.
 
-#### **2、Heap Memory Allocation Strategy**
+#### 2、Heap Memory Allocation Strategy
 
 * Objects are primarily allocated in the Eden space. If there is not enough space in Eden for allocation, the JVM performs a Minor GC. The surviving objects that do not need to be collected will move to the From space of the Survivor (if the From space is insufficient, they directly enter the Old space).
 
@@ -486,7 +490,7 @@ PC refers to a pointer that stores the location of the next instruction. It is a
 
 * Each time a Minor GC is performed or a large object is directly moved to the old generation, the JVM calculates the required space size. If it is less than the remaining size of the old generation, a **Full GC** is performed.
 
-#### **3\. Steps to Create an Object**
+#### 3\. Steps to Create an Object
 
 **Steps: Class loading check, memory allocation, initialization of zero values, setting object header, execution of init method**
 
@@ -510,7 +514,7 @@ After zero-initialization is complete, the JVM must perform necessary settings o
 
 From the JVM's perspective, a new object has been created, but from the Java program's perspective, the method has not yet been executed, and all fields are still zero. Therefore, generally speaking (except for cyclic dependencies), after executing the new instruction, the method is executed next, and only then is a truly usable object created.
 
-#### 4、**Object References**
+####  4、Object References
 
 Ordinary object reference relationships are **strong references**.
 
@@ -520,7 +524,7 @@ Ordinary object reference relationships are **strong references**.
 
 **Phantom references** are a kind of non-existent reference, and they are not used very much in real-world scenarios. They are mainly used to **track the activity of objects being garbage collected**.
 
-### **JVM class loading process**
+### JVM class loading process
 
 **Process: Loading, Verification, Preparation, Parsing, Initialization**
 
@@ -558,7 +562,7 @@ During the parsing phase, the virtual machine replaces symbolic references in th
 
 The final step of the loading process during the initialization phase, and this phase is when the Java program code defined in the class begins to be truly executed.
 
-#### **1\. Parent Delegation Mechanism**
+#### 1\. Parent Delegation Mechanism
 
 Every class has a corresponding class loader. When ClassLoaders in the system work together, they default to using the parent delegation model. That is, when loading a class, the system first checks if the class has been loaded. If it has been loaded, it returns directly; otherwise, it attempts to load it. During loading, the request is first delegated to the parent class loader's loadClass() method. Therefore, all requests should ultimately be sent to the top-level BootstrapClassLoader. When the parent class loader cannot handle it, it handles it itself. When the parent class loader is null, the BootstrapClassLoader is used as the parent class loader.
 
@@ -576,7 +580,7 @@ This mechanism ensures the priority loading of JDK core classes; it makes Java p
 
 *   Java's SPI, the initiator BootstrapClassLoader is already at the top layer, it directly retrieves AppClassLoader for driving loading, which is opposite to the parent delegation.
 
-#### **2\. Tomcat's class loading mechanism**
+#### 2\. Tomcat's class loading mechanism
 
 **Steps:**
 
@@ -591,7 +595,7 @@ To summarize the above steps, when WebAppClassLoader loads classes, it deliberat
 
 ### JVM garbage collection
 
-#### **1、Survival algorithm and two marking processes**
+#### 1、Survival algorithm and two marking processes**
 
 **Reference counting method:**
 
@@ -609,7 +613,7 @@ Through a series of objects called "GC Roots" (various references related to act
 
 Before an object is garbage collected, its finalize() method is called; two marking phases, where the first phase marks objects not in the "life cycle graph." For the second phase, it first checks whether the object implements the finalize() method. If it doesn't, the object is directly judged as collectible. If it does, the object is placed in a queue and executed by a low-priority thread established by the virtual machine. Subsequently, a second, small-scale marking is performed, and the objects marked during this phase are then truly garbage collected.
 
-#### **2\. Garbage Collection Algorithms**
+#### 2\. Garbage Collection Algorithms
 
 **Garbage Collection Algorithms**: Copying algorithm, Mark-Sweep, Mark-Compact, Generational Collection
 
@@ -641,7 +645,7 @@ The old generation has a higher survival rate, and there is no additional space 
 
 **Safepoint** When GC occurs, all user threads must stop before garbage collection can proceed. This state can be considered safe for the JVM, and the entire heap state is stable. If a thread fails to reach a safepoint before GC, the entire JVM waits for this blocked thread, causing the overall GC time to increase.
 
-##### **MinorGC, MajorGC, FullGC**
+#### #MinorGC, MajorGC, FullGC
 
 **MinorGC** occurs when there is not enough space in the young generation.
 
@@ -659,7 +663,7 @@ The old generation has a higher survival rate, and there is no additional space 
 
 **Space Allocation Guarantee** Before a Minor GC occurs, the virtual machine first checks if the maximum available continuous space in the old generation is greater than the total space of all objects in the young generation. If this condition is met, then the Minor GC can ensure safety. If not, a Full GC is performed.
 
-#### **3\. Garbage Collectors**
+#### 3\. Garbage Collectors
 
 **JDK3: Serial Parnew Focuses on Efficiency**
 
@@ -737,7 +741,7 @@ Read barrier: Solve the STW problem caused by concurrency between GC and applica
 
 *   Mostly affects throughput, not exceeding 15%
 
-#### **4\. Configure garbage collector**
+#### 4\. Configure garbage collector
 
 *   First is the memory size issue. Basically, I will set a limit for each memory area to avoid overflow issues, such as the metaspace.
 *   Usually, I set the heap space to 2/3 of the operating system. For heaps larger than 8GB, G1 is preferred.
@@ -745,7 +749,7 @@ Read barrier: Solve the STW problem caused by concurrency between GC and applica
 *   Based on system capacity, access latency, throughput, and other factors, we conduct targeted optimizations. Our service is highly concurrent, making the STW time sensitive.
 *   I will identify this bottleneck point by recording detailed GC logs, leveraging log analysis tools like GCeasy to pinpoint the issue.
 
-#### **4\. JVM Performance Tuning**
+#### 4\. JVM Performance Tuning
 
 The JVM state of the corresponding process to locate and resolve issues and make corresponding optimizations
 
@@ -802,7 +806,7 @@ Option explanations:
 	•	-dump: – Generate a dump file of the Java heap.
 ```
 
-#### 5\. New features of JDK
+####  5\. New features of JDK
 
 JDK8
 
@@ -843,7 +847,7 @@ Apply ZGC garbage collector to macOS and Windows platforms
 
 ### Online troubleshooting
 
-#### 1\. Hardware troubleshooting
+####  1\. Hardware troubleshooting
 
 If an instance encounters an issue, depending on the situation, decide whether to restart urgently. If CPU or memory usage spikes or OOM exceptions appear in the logs
 
@@ -1003,7 +1007,7 @@ jhsdb jmap  --binaryheap --pid  37340
 
 General memory overflow manifests as a continuous rise in the usage of the Old generation, even after multiple rounds of garbage collection without significant improvement. For example, the GC Roots in ThreadLocal; the root cause of memory leaks is that these objects do not sever their connection with GC Roots, and some tools can reveal their relationship.
 
-#### 2\. Report Exceptions | JVM Tuning
+####  2\. Report Exceptions | JVM Tuning
 
 There is a reporting system that frequently experiences memory overflow, and it also frequently causes service denials during peak usage. Since most users are in the administrator role, the issue was quickly reported to the development team.
 
@@ -1037,7 +1041,7 @@ Using MAT to analyze heap snapshots, it was found that many areas could be optim
 
 Each operation makes JVM usage more available, after a series of optimizations, performance under the same machine stress test data improved several times.
 
-#### 3、Large screen exceptions | JUC optimization
+####  3、Large screen exceptions | JUC optimization
 
 Some data needs to be fetched using HttpClient for completion. The service providers offering data may have very long response times, which may also cause overall service blocking.
 
@@ -1059,7 +1063,7 @@ The problem has been identified, and the solution has become a natural progressi
 
 3\. Use countdownLaunch to control the execution order logic of threads
 
-#### **4、Interface Latency | SWAP Optimization**
+#### 4、Interface Latency | SWAP Optimization**
 
 There is a particular instance of the service that frequently experiences service stalls. Since the concurrency level of the service is relatively high, every additional second of downtime results in noticeable delays for tens of thousands of user requests.
 
@@ -1083,7 +1087,7 @@ He wants to find a log file called to be deleted, to see on which server it is l
 
 Swap is the source of all evil in many performance scenarios. It is recommended to disable it. Under high concurrency, swap will definitely let you experience its devilish side: processes may not die, but long GC times are unbearable.
 
-#### 5、**Memory Overflow | Cache Tuning**
+####  5、Memory Overflow | Cache Tuning
 
 > Once, I encountered a failure online. After restarting, I used the jstat command and found that the Old generation space kept growing. I used the jmap command to export an online heap dump, then analyzed it with MAT. Through the analysis of GC Roots, I discovered a very large HashMap object. This was originally used by another colleague for caching purposes, but it was an unbounded cache without a timeout or LRU strategy. Additionally, the key class objects' hashCode and equals methods were not overridden, which prevented the objects from being retrieved and directly caused the heap memory usage to keep rising. Later, I replaced this cache with guava's Cache and set it to use weak references, and the issue was resolved.
 >
@@ -1122,7 +1126,7 @@ Even when providing equals and hashCode methods, one must be very careful and av
 
 Let's look at another example, regarding the application of a file processor. After reading or writing some files, due to some exceptions occurring, the **close method is not placed inside the finally block**, resulting in a leak of file handles. Since file processing is very frequent, it has caused a serious memory leak issue.
 
-#### 6: CPU Spikes | Infinite Loop
+####  6: CPU Spikes | Infinite Loop
 
 We have an online application where CPU usage spikes on a single node after running for a period of time. Once a spike occurs, it is generally suspected that a business logic computation is too intensive or that an infinite loop has been triggered (such as the well-known infinite loop caused by high concurrency in HashMap). However, upon further investigation, it turns out to be a GC issue.
 
@@ -1164,7 +1168,7 @@ It can be seen that the root cause of the problem is that our heap is already fu
 
 ### Thread Scheduling
 
-#### **1\. Thread States**
+#### 1\. Thread States**
 
 Threads are the smallest units of CPU task scheduling, and each thread has its own program counter, virtual machine stack, and local method stack
 
@@ -1172,7 +1176,7 @@ Threads are the smallest units of CPU task scheduling, and each thread has its o
 
 ![img](../pic/thread.jpg)
 
-#### **2\. Thread state transitions**
+#### 2\. Thread state transitions**
 
 | Methods   | Function                                                     | Difference                       |
 | --------- | ------------------------------------------------------------ | -------------------------------- |
@@ -1187,7 +1191,7 @@ Threads are the smallest units of CPU task scheduling, and each thread has its o
 
 ![img](https://s0.lgstatic.com/i/image/M00/80/24/Ciqc1F_Qfy2ACkrLAAD2DLkc2qw212.png)
 
-#### **3\. Blocking and Waking Process**
+#### 3\. Blocking and Waking Process**
 
 **Blocking:**
 
@@ -1205,7 +1209,7 @@ The thread will be removed from the wait queue and become a schedulable thread a
 
 Since `wait()` is a method of Object and calling it will forcibly release the current object lock, you must hold the monitor of the current object when invoking `wait()`. Therefore, the `wait()` method is called within a synchronized method or synchronized block.
 
-#### **4\. Differences between wait and sleep**
+#### 4\. Differences between wait and sleep**
 
 *   The wait method must be used in code protected by synchronized, while the sleep method does not have this requirement.
 
@@ -1215,7 +1219,7 @@ Since `wait()` is a method of Object and calling it will forcibly release the cu
 
 *   wait/notify are methods of the Object class, while sleep is a method of the Thread class.
 
-#### 5\. Ways to create threads
+####  5\. Ways to create threads
 
 **Implement the Runnable interface** (prefer this method)
 
@@ -1266,7 +1270,7 @@ static class DefaultThreadFactory implements ThreadFactory {
 
 Advantages: By reusing already created threads, **reduces resource consumption**, threads can directly process tasks in the queue **improves response speed**, and it is also convenient for **unified monitoring and management**.
 
-#### **1\. ThreadPool Constructor**
+#### 1\. ThreadPool Constructor**
 
 ```java
 /**
@@ -1289,7 +1293,7 @@ public ThreadPoolExecutor(int corePoolSize,int maximumPoolSize,long keepAliveTim
 | threadFactory            | New Thread Factory                                           |
 | RejectedExecutionHandler | Rejection Policy. When the number of submitted tasks exceeds the sum of maxmumPoolSize and workQueue, the tasks will be handed over to the RejectedExecutionHandler for processing |
 
-#### **2、Thread Processing Task Process:**
+#### 2、Thread Processing Task Process:
 
 ![img](../pic/thread_process.jpg)
 
@@ -1299,7 +1303,7 @@ public ThreadPoolExecutor(int corePoolSize,int maximumPoolSize,long keepAliveTim
 4.  When the number of submitted tasks exceeds maximumPoolSize, newly submitted tasks are handled by RejectedExecutionHandler.
 5.  When the number of threads in the thread pool exceeds corePoolSize and the idle time reaches keepAliveTime, idle threads are closed.
 
-#### **3、Thread Rejection Policy**
+#### 3、Thread Rejection Policy**
 
 The threads in the thread pool have been exhausted and cannot continue to serve new tasks, while the waiting queue is also full and cannot accommodate new tasks anymore. At this point, we need a rejection policy mechanism to handle this issue reasonably.
 
@@ -1315,7 +1319,7 @@ It does not cause task loss while slowing down the speed of submitting tasks, gi
 
 **DiscardPolicy:** This policy silently discards unhandled tasks without any processing. If task loss is acceptable, this is the best solution.
 
-#### **4、Executors class implements ThreadPool**
+#### 4、Executors class implements ThreadPool
 
 ![img](https://s0.lgstatic.com/i/image3/M01/63/5A/CgpOIF4z1EiAFjNQAAAtVe5xjgQ999.png)
 
@@ -1333,7 +1337,7 @@ FixedThreadPool and SingleThreadExecutor: Allow the **queue length** to be Integ
 
 Manually created thread pools use ArrayBlockingQueue at the bottom to prevent OOM.
 
-#### **5、Thread pool size setting**
+#### 5、Thread pool size setting
 
 *   CPU-intensive (n+1)
 
@@ -1349,7 +1353,7 @@ It can also use the formula: CPU core count \* (1 + average wait time / average 
 
 ### Thread safety
 
-#### **1、Optimistic locking, CAS concept**
+#### 1、Optimistic locking, CAS concept**
 
 **Optimistic Locking Mechanism in Java:**
 
@@ -1367,7 +1371,7 @@ Only when the value of V equals the value of A, which equals the value of V, is 
 
 **Disadvantages:**
 
-###### ABA:
+#### ## ABA:
 
 - **What it is:** In lock-free code that uses **CAS (Compare-And-Swap)**, a thread checks that a value is still A before changing it. If another thread briefly changes it from A → B → A, the first thread sees A again and thinks “nothing changed,” so its CAS **incorrectly succeeds**. The change to B is invisible—hence “ABA.”
 
@@ -1405,7 +1409,7 @@ Under high concurrency, concurrent conflicts are prone to occur. If CAS keeps fa
 
 CAS is capable of ensuring atomicity for operations on a single variable, but in Java, it needs to be used in conjunction with the volatile keyword to ensure thread safety; when it comes to multiple variables, CAS is helpless; besides, the implementation of CAS requires hardware-level support and cannot be directly used by ordinary Java users, only by **leveraging atomic classes under the atomic package** to achieve, which limits flexibility
 
-#### **2、Underlying implementation of synchronized**
+#### 2、Underlying implementation of synchronized**
 
 **Usage Methods:** The main three usage methods
 
@@ -1425,7 +1429,7 @@ Locks also have different states. Before JDK6, there were only two states: no lo
 
 Synchronized code blocks are implemented using monitorenter and monitorexit instructions, while synchronized methods are implemented using flags.
 
-#### **3、ReentrantLock underlying implementation**
+#### 3、ReentrantLock underlying implementation
 
 Since ReentrantLock is a mutex provided under the java.util.concurrent package, compared to Synchronized, the ReentrantLock class offers some advanced features.
 
@@ -1449,7 +1453,7 @@ The implementation of ReenTrantLock is a spinlock, which achieves locking by loo
 
 5、**Is Fair Lock** synchronized is a non-fair lock ReentrantLock can either choose a fair lock or a non-fair lock, by passing a boolean value through the constructor when creating a new ReentrantLock to make the choice, empty by default false non-fair lock, true for fair lock, fair lock performance is very low.
 
-#### **4、Differences between fair and non-fair locks**
+#### 4、Differences between fair and non-fair locks
 
 **Fair lock:**
 
@@ -1473,7 +1477,7 @@ A fair lock needs to maintain a queue. Later threads need to acquire the lock, e
 
 The **overhead of thread switching**, in fact, is the reason why non-fair locks are more efficient than fair locks, because **non-fair locks reduce the chances of threads being suspended**, and later threads have a certain probability of escaping the overhead of being suspended.
 
-#### **5、Lock optimization at the usage level**
+#### 5、Lock optimization at the usage level
 
 【1】**Reduce lock time:** Codes that do not need to be synchronized should not be placed inside the synchronized block if they can be executed outside, allowing the lock to be released as soon as possible;
 
@@ -1497,7 +1501,7 @@ ReentrantReadWriteLock is a read-write lock, read operations acquire a read lock
 
 If the synchronized operation needs to be performed very quickly and thread contention is not intense, using CAS will be more efficient, because locking causes thread context switching. If the time spent on context switching is longer than the time spent on the synchronized operation itself, and if thread competition for resources is not intense, using volatile + CAS operations can be a very efficient choice;
 
-#### 6、System-level lock optimization
+####  6、System-level lock optimization
 
 **Adaptive spinlocks:**
 
@@ -1523,7 +1527,7 @@ Under low competition, avoiding thread context switching through CAS can signifi
 
 The overhead caused by the locking and unlocking process of a heavyweight lock is fixed. Heavyweight locks are suitable for situations with intense competition, high concurrency, and long execution time of synchronized blocks.
 
-#### **7、ThreadLocal Principle**
+#### 7、ThreadLocal Principle
 
 **Introduction to ThreadLocal:**
 
@@ -1561,7 +1565,7 @@ Therefore, if ThreadLocal is not strongly referenced externally, it will be clea
 
 The ThreadLocalMap implementation has already considered this scenario. When calling the set(), get(), or remove() methods, it cleans up records with a null key. If memory leaks occur, it's only when records with a null key exist after a null key record has been created, without manually calling the remove() method, and no longer calling get(), set(), or remove() methods afterward. Therefore, after using ThreadLocal methods, it's **best to manually call the remove() method**.
 
-#### **8、HashMap Thread Safety**
+#### 8、HashMap Thread Safety
 
 **CPU 100% caused by dead loop**
 
@@ -1569,7 +1573,7 @@ HashMap may cause dead loops and result in CPU 100%. The main reason for this si
 
 So in summary, HashMap is not thread-safe, and it is recommended to use ConcurrentHashMap in multi-threaded scenarios for thread safety with good performance.
 
-#### 9\. Why String is immutable
+####  9\. Why String is immutable
 
 1.  Can use the **string constant pool**, multiple creation of the same string will point to the same memory address
 
@@ -1599,7 +1603,7 @@ The Volatile keyword in Java ensures that changes to variables are immediately s
 
 In Java, Synchronized and Volatile can be used to ensure the ordering of operations between multiple threads. Differences: Volatile prohibits instruction reordering. Synchronized ensures that only one thread can operate at the same time.
 
-#### **1、Underlying Implementation of volatile**
+#### 1、Underlying Implementation of volatile
 
 **Function:**
 
@@ -1645,7 +1649,7 @@ class Singleton {
 }
 ```
 
-#### **2、AQS Concept**
+#### 2、AQS Concept
 
 The full name of AQS is (AbstractQueuedSynchronizer), which stands for an abstract queue-style synchronizer. It is a framework used to build locks and synchronizers, enabling simple and efficient construction of a wide variety of synchronizers using AQS, such as lock, CountDownLatch, CyclicBarrier, and Semaphore. The issues to be addressed:
 
@@ -1677,7 +1681,7 @@ Literally, it means a reusable (Cyclic) barrier (Barrier). The task it performs 
 
 A semaphore is primarily used for two purposes: one is for mutual exclusion of multiple shared resources, and the other is for controlling the number of concurrent threads. The rate limiting concept of SpringHystrix
 
-#### 3、happens-before
+####  3、happens-before
 
 Used to describe visibility-related issues: If the first operation happens-before the second operation, we say that the first operation is visible to the second operation.
 
