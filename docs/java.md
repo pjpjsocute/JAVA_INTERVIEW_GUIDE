@@ -4,7 +4,6 @@ layout: default
 ---
 # Java
 
-- TOC
 {:toc}
 
 
