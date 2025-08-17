@@ -186,19 +186,88 @@ Performance: Completion is fastest. Use Phrase/Term carefully to avoid high reso
 
 ### Deep Paging Performance Solutions
 
-Deep paging (e.g., using `from + size` for very large offsets) is extremely inefficient because ES must scan and discard all skipped documents. For example, sending a broadcast to all users in a province cannot rely on naïve `from+size` queries.
+By default, Elasticsearch pagination uses the `from + size` approach, similar to MySQL's `LIMIT`.  
+When `from` is very large (deep pagination), Elasticsearch must collect and sort all results up to that offset across **all shards**, which causes high CPU, memory, I/O, and even network overhead.
 
-**Solutions**:
-1. **Search After**  
-   Use the `search_after` parameter with a sort key (like a unique timestamp or ID). This avoids recalculating large offsets and is more efficient for scrolling through large datasets.
+👉 Example: A search across 10 shards with `from=990` and `size=10` means each shard returns 1000 results to the coordinating node. That’s **10,000 results transferred** for just one query — multiplied by 100 queries, the load becomes massive.
 
-2. **Scroll API**  
-   Designed for extracting large numbers of results in batches. Maintains a snapshot of data, efficient for exporting or processing all results.
+Elasticsearch limits this with the setting `index.max_result_window` (default: **10,000**). Beyond this, ES rejects the query.
 
-3. **Index Partitioning**  
-   Split data by time (daily/monthly indexes) or region to narrow query scope and reduce result size.
+---
 
-4. **Use Aggregations Instead of Pagination**  
-   In many cases, what you really need is summarized/aggregated results, not deep-paged individual documents. Aggregations can avoid deep pagination entirely.
+#### Solutions
 
-👉 **Best practice**: For user-facing queries, use `search_after` with proper sorting. For backend/batch jobs, use the `scroll` API. Always design indexes with partitioning strategies to minimize the need for deep pagination.  
+##### 1. `scroll` API (Snapshot-based Traversal)
+- Creates a **snapshot** of matching results at query time.
+- Subsequent requests use a `scroll_id` to fetch batches of results.
+- Data changes (insert/update/delete) after initialization are **not reflected** in results.
+- Best for **batch processing/export tasks** (e.g., sending notifications to millions of users).
+
+Example:
+```json
+POST /book/_search?scroll=1m&size=2
+{
+  "query": { "match_all": {} }
+}
+```
+```json
+GET /_search/scroll
+{
+  "scroll": "1m",
+  "scroll_id": "returned_scroll_id"
+}
+```
+
+---
+
+##### 2. `search_after` (Real-time Cursor Pagination)
+- Uses the **last document’s sort key** from the previous page to fetch the next page.
+- Reflects **real-time changes** (insert/update/delete).
+- Requires a **globally unique sort field** (commonly `_id`).
+- Cannot skip pages (must iterate sequentially).
+- Best for **real-time user-facing pagination**.
+
+Example:
+```json
+GET /book/_search
+{
+  "query": { "match_all": {} },
+  "size": 2,
+  "sort": [{ "_id": "desc" }]
+}
+```
+```json
+GET /book/_search
+{
+  "query": { "match_all": {} },
+  "size": 2,
+  "search_after": ["last_doc_id"],
+  "sort": [{ "_id": "desc" }]
+}
+```
+
+---
+
+##### 3. `from + size`
+- Default and simplest approach.
+- Flexible but **not scalable** for deep pagination.
+- Only suitable for **small datasets** or shallow pages (e.g., first 100 pages).
+
+---
+
+#### Comparison
+
+| Method        | Performance | Advantages                         | Limitations                                | Best Use Cases                                |
+|---------------|-------------|------------------------------------|--------------------------------------------|-----------------------------------------------|
+| `from + size` | Low         | Simple, flexible                   | Deep pagination issues, high resource cost  | Small datasets, shallow pagination (<10k docs) |
+| `scroll`      | Medium      | Handles deep pagination, simple API| Not real-time (snapshot), maintains `scroll_id` | Bulk export, batch processing of large datasets |
+| `search_after`| High        | Real-time, best performance        | Must paginate sequentially, needs unique sort key | Real-time user-facing infinite scroll/pagination |
+
+---
+
+#### Best Practices
+
+- ✅ For **user-facing pagination** → use **`search_after`** with proper sort fields.
+- ✅ For **backend jobs / batch export** → use **`scroll`** API.
+- ✅ For **small datasets / shallow pagination** → `from + size` is acceptable.
+- 🚫 Avoid allowing arbitrary deep pagination in user interfaces — often limit to first N pages.  
