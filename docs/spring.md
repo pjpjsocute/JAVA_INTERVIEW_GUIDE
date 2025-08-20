@@ -339,7 +339,7 @@ Precautions:
 
 **Transaction Propagation Attributes**
 
-1. **REQUIRED（default attribute** If a transaction exists, it supports the current transaction. If there is no transaction, it starts a new transaction.
+1. **REQUIRED (default attribute)** If a transaction exists, it supports the current transaction. If there is no transaction, it starts a new transaction.
 
 2.  MANDATORY Supports the current transaction. If there is no current transaction, it throws an exception.
 
