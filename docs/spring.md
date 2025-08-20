@@ -339,7 +339,7 @@ Precautions:
 
 **Transaction Propagation Attributes**
 
-**1) REQUIRED（default attribute）** If a transaction exists, it supports the current transaction. If there is no transaction, it starts a new transaction.
+1. ** REQUIRED（default attribute）** If a transaction exists, it supports the current transaction. If there is no transaction, it starts a new transaction.
 
 2.  MANDATORY Supports the current transaction. If there is no current transaction, it throws an exception.
 
@@ -351,7 +351,7 @@ Precautions:
 
 6.  SUPPORTS supports the current transaction, executing in a non-transactional way if no transaction is active.
 
-**7) NESTED** （**Local Rollback**） Supports the current transaction, adds Savepoint points, and commits or rolls back synchronously with the current transaction. **A very important concept of nested transactions is that inner transactions depend on outer transactions. If the outer transaction fails, it will roll back the actions taken by the inner transaction. However, a failure in the inner transaction will not cause the outer transaction to roll back.**
+7. **NESTED** （**Local Rollback**） Supports the current transaction, adds Savepoint points, and commits or rolls back synchronously with the current transaction. **A very important concept of nested transactions is that inner transactions depend on outer transactions. If the outer transaction fails, it will roll back the actions taken by the inner transaction. However, a failure in the inner transaction will not cause the outer transaction to roll back.**
 
 ### Reading the Spring Source Code
 
