@@ -250,17 +250,17 @@ How to avoid duplicate file uploads Solution After the file is uploaded successf
 
 ### Transactions
 
-#### **1、The four characteristics of a transaction**
+#### **1、The four characteristics of a transaction (ACID)**
 
 **Four Major Characteristics of Transactions:** Atomicity, Consistency, Isolation, Durability
 
-**Atomicity:** A transaction is the smallest execution unit and cannot be split. The atomicity of a transaction ensures that actions are either fully completed or not executed at all.
+- **Atomicity:** A transaction is the smallest execution unit and cannot be split. The atomicity of a transaction ensures that actions are either fully completed or not executed at all.
 
-**Consistency:** Before and after executing a transaction, the data remains consistent. The results of multiple transactions reading the same data are the same;
+- **Consistency:** Before and after executing a transaction, the data remains consistent. The results of multiple transactions reading the same data are the same;
 
-**Isolation:** When accessing the database concurrently, one user's transaction is not interfered with by other transactions. The database is independent between concurrent transactions;
+- **Isolation:** When accessing the database concurrently, one user's transaction is not interfered with by other transactions. The database is independent between concurrent transactions;
 
-**Durability:** After a transaction is committed, the changes it makes to the data in the database are permanent and should not be affected by any database failures.
+- **Durability:** After a transaction is committed, the changes it makes to the data in the database are permanent and should not be affected by any database failures.
 
 **Implementation guarantees:**
 
