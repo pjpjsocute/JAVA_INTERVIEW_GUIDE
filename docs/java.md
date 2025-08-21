@@ -259,7 +259,7 @@ The default load factor is 0.75, if the number of elements already stored in the
 
 **Steps for the put operation:**
 
-![img](../pic/hashmap.svg)
+![img](../pic/hashmap.jpg)
 
 1、Check if the array is empty, and initialize if it is;
 
