@@ -23,6 +23,7 @@ toc_levels: [2,3,4,5]
 - **Distributed System** → [Read »](ds.md)
 - **Elasticsearch** → [Read »](es.md)
 - **Docker** → [Read »](docker.md)
+- **中英词汇表** → [Read »](vocabulary_list.md)
 
 ---
 
