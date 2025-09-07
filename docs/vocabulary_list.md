@@ -35,24 +35,24 @@ toc_levels: [2,3,4,5]
 
 ### Java
 
-| 中文                                                         | 英文                                                         |      |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ---- |
-| 垃圾回收器                                                   | garbage collecter                                            |      |
-| 动态代理                                                     | dynamic proxy                                                |      |
-| 多态                                                         | <font style="color:rgb(13, 13, 13);">Polymorphism</font>     |      |
-| 封装                                                         | <font style="color:rgb(13, 13, 13);">Encapsulation</font>    |      |
-| 继承                                                         | **<font style="color:rgb(0, 29, 53);">Inheritance</font>**   |      |
-| 平行                                                         | <font style="color:rgb(52, 152, 194);">horizontal</font>     |      |
-| 垂直                                                         | <font style="color:rgb(52, 152, 194);">vertical</font><font style="color:rgb(11, 65, 100);background-color:rgb(41, 44, 50);"></font> |      |
-| 信号量                                                       | <font style="color:rgb(52, 152, 194);">semaphore</font>      |      |
-| 可重入锁                                                     | <font style="color:rgb(52, 152, 194);">ReentrantLock</font>  |      |
-| 自旋锁                                                       | <font style="color:rgb(52, 152, 194);">spin lock</font>      |      |
-| 尺度                                                         | <font style="color:rgb(52, 152, 194);">Scale</font>          |      |
-| **<font style="color:rgb(52, 152, 194);">泛型</font>****<font style="color:#0e0e0e;"></font>** | <font style="color:#0e0e0e;">Generics</font>                 |      |
-| **<font style="color:rgb(52, 152, 194);">ACID</font>**       | <br/>+ **<font style="color:rgb(31, 35, 40);">Atomicity</font>**<font style="color:rgb(31, 35, 40);"> </font><font style="color:rgb(31, 35, 40);">- Each transaction is all or nothing</font><br/>+ **<font style="color:rgb(31, 35, 40);">Consistency</font>**<font style="color:rgb(31, 35, 40);"> </font><font style="color:rgb(31, 35, 40);">- Any transaction will bring the database from one valid state to another</font><br/>+ **<font style="color:rgb(31, 35, 40);">Isolation</font>**<font style="color:rgb(31, 35, 40);"> </font><font style="color:rgb(31, 35, 40);">- Executing transactions concurrently has the same results as if the transactions were executed serially</font><br/>+ **<font style="color:rgb(31, 35, 40);">Durability</font>**<font style="color:rgb(31, 35, 40);"> - Once a transaction has been committed, it will remain so</font> |      |
-| <font style="color:#0e0e0e;">单一服务</font>                 | <font style="color:rgb(36, 36, 36);background-color:rgb(255, 250, 246);">monolithic</font> |      |
-| 元空间                                                       | Metaspace                                                    |      |
-| 年轻代 / 老年代                                              | Young / Old Generation                                       |      |
+| 中文                                                         | 英文                                                         |                          |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |--------------------------|
+| 垃圾回收器                                                   | garbage collecter                                            |                          |
+| 动态代理                                                     | dynamic proxy                                                |                          |
+| 多态                                                         | <font style="color:rgb(13, 13, 13);">Polymorphism</font>     |                          |
+| 封装                                                         | <font style="color:rgb(13, 13, 13);">Encapsulation</font>    |                          |
+| 继承                                                         | **<font style="color:rgb(0, 29, 53);">Inheritance</font>**   |                          |
+| 平行                                                         | <font style="color:rgb(52, 152, 194);">horizontal</font>     | 一般是水平扩容，horizontal scale |
+| 垂直                                                         | <font style="color:rgb(52, 152, 194);">vertical</font><font style="color:rgb(11, 65, 100);background-color:rgb(41, 44, 50);"></font> |                          |
+| 信号量                                                       | <font style="color:rgb(52, 152, 194);">semaphore</font>      |                          |
+| 可重入锁                                                     | <font style="color:rgb(52, 152, 194);">ReentrantLock</font>  |                          |
+| 自旋锁                                                       | <font style="color:rgb(52, 152, 194);">spin lock</font>      |                          |
+| 尺度                                                         | <font style="color:rgb(52, 152, 194);">Scale</font>          |                          |
+| **<font style="color:rgb(52, 152, 194);">泛型</font>****<font style="color:#0e0e0e;"></font>** | <font style="color:#0e0e0e;">Generics</font>                 |                          |
+| **<font style="color:rgb(52, 152, 194);">ACID</font>**       | <br/>+ **<font style="color:rgb(31, 35, 40);">Atomicity</font>**<font style="color:rgb(31, 35, 40);"> </font><font style="color:rgb(31, 35, 40);">- Each transaction is all or nothing</font><br/>+ **<font style="color:rgb(31, 35, 40);">Consistency</font>**<font style="color:rgb(31, 35, 40);"> </font><font style="color:rgb(31, 35, 40);">- Any transaction will bring the database from one valid state to another</font><br/>+ **<font style="color:rgb(31, 35, 40);">Isolation</font>**<font style="color:rgb(31, 35, 40);"> </font><font style="color:rgb(31, 35, 40);">- Executing transactions concurrently has the same results as if the transactions were executed serially</font><br/>+ **<font style="color:rgb(31, 35, 40);">Durability</font>**<font style="color:rgb(31, 35, 40);"> - Once a transaction has been committed, it will remain so</font> |                          |
+| <font style="color:#0e0e0e;">单一服务</font>                 | <font style="color:rgb(36, 36, 36);background-color:rgb(255, 250, 246);">monolithic</font> |                          |
+| 元空间                                                       | Metaspace                                                    |                          |
+| 年轻代 / 老年代                                              | Young / Old Generation                                       |                          |
 
 
 ### Spring
